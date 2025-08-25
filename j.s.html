@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript dom</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="todo-container">
+    <h1>java dom</h1>
+    <div class="input-area">
+      <input type="text" class="todo-input" placeholder="Tambah tugas baru...">
+      <button class="add-btn">tambah</button>
+    </div>
+    <ul class="todo-list">
+      <li class="todo-item">saskia nur shafa</li>
+      <li class="todo-item">11 rpl 2 - 28</li>
+    </ul>
+  </div>
+
+  <script>
+    const input = document.getElementsByClassName("todo-input")[0];
+    const button = document.getElementsByClassName("add-btn")[0];
+    const list = document.getElementsByClassName("todo-list")[0];
+
+    button.addEventListener("click", function () {
+      const teksv = input.value.trim();
+      if (teksv !== "") {
+        const li = document.createElement("li");
+        li.className = "todo-item";
+        li.textContent = teksv;
+        list.appendChild(li);
+        input.value = "";
+      } else {
+        alert("Tugas tidak boleh kosong!");
+      }
+    });
+  </script>
+</body>
+</html>

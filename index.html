@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<!--<body>
+    <p id=""teks>ini teks hari ini</p>
+    <script>
+        const teks = document.getElementById("teks");
+        console.info(teks);
+    </script>
+</body> -->
+
+    <!--<script>
+        console.log(document.title);
+        console.log(document.body);
+        console.log(document.head);
+    </script> -->
+    
+    <!--<script>
+        const orang = {};
+        orang["nama"] = "shafa";
+        orang["kelas"] = "xi rpl 2";
+
+        console.table(orang); 
+    </script> --> 
+
+    <!--<p id="title">dom</p>
+    <body>
+        <ul id="menu">
+            <li id="item-1">indomie</li>
+            <li id="item-2">supermie</li>
+            <li id="item-3">intermie</li>
+        </ul>
+        <script>
+            const title = document.getElementById("title");
+            title.textContent = "belajar dom";
+
+        //    const menu = document.getElementById("menu");
+        //    menu.removeChild(document.getElementById ("item-3"));
+        //    console.info(menu);
+        //    console.info(menu.children);
+        //    const item = document.getElementById("item-1");
+        //    console.info(item);
+        //    console.info(item.nextSibling);
+        </script>
+    </body> -->
+
+    <!--<body>
+        <div id="content" class="content"></div>
+        <script>
+            const content = document.getElementById("content");
+            const title = document.createElement("h1");
+            title.textContent = "title ini dibuat menggunakan java script";
+            content.appendChild(title);
+        </script>
+    </body> -->
+
+    <body>
+    <input id="clickme" type="button" value="Click me"/>
+    <script>
+        const clickme = document.getElementById("clickme");
+        clickme.addEventListener("click", function () {
+            clickme.setAttribute("value", "You already clicked me");
+        });
+    </script>
+    </body>
+    
+</html>
