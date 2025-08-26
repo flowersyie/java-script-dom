@@ -1,69 +1,89 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF‑8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>javascript dom</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <title>JavaScript dom</title>
+  <link href="j.s.css" rel="stylesheet">
+  </head>
 <body>
-  <div class="todo-container">
-    <h1>java dom</h1>
-    <div class="input-area">
-      <input type="text" class="todo-input" placeholder="Tambah tugas baru...">
-      <button class="add-btn">tambah</button>
+  <div class="container">
+        <h1>🎬 JAVA SCRIPT - SHAFA 28</h1>
+        
+        <div class="add-section">
+            <input type="text" id="movieInput" placeholder="Tuliskan pesan anda disini...">
+            <button id="addBtn" onclick="Add()">Add</button>
+        </div>
+
+        <ul id="movieList" class="movie-list">
+            <li class="empty-state">Belum ada pesan disini. Tambahkan pesan pertama Anda!</li>
+        </ul>
     </div>
-    <ul class="todo-list">
-      <li class="todo-item">saskia nur shafa</li>
-      <li class="todo-item">11 rpl 2 - 28</li>
-    </ul>
-  </div>
 
   <script>
-    const input = document.getElementsByClassName("todo-input")[0];
-    const button = document.getElementsByClassName("add-btn")[0];
-    const list = document.getElementsByClassName("todo-list")[0];
+      const input = document.getElementById("movieInput");
+    const button = document.getElementById("addBtn");
+    const list = document.getElementById("movieList");
+
+    function removeEmptyState() {
+      const empty = document.querySelector(".empty-state");
+      if (empty) empty.remove();
+    }
 
     button.addEventListener("click", function () {
-      const teksv = input.value.trim();
-      if (teksv !== "") {
+      const movieTitle = input.value.trim();
+
+      if (movieTitle !== "") {
+        removeEmptyState();
+
         const li = document.createElement("li");
-        li.className = "todo-item";
 
         const spanText = document.createElement("span");
-        spanText.textContent = teksv;
+        spanText.textContent = movieTitle;
 
-        li.appendChild(spanText);
+        const actionDiv = document.createElement("div");
+        actionDiv.className = "action-buttons";
 
         const btnEdit = document.createElement("button");
-        btnEdit.textContent = "edit";
-        btnEdit.style.backgroundColor = "black";
-
+        btnEdit.textContent = "Edit";
+        btnEdit.className = "edit-btn";
         btnEdit.addEventListener("click", function () {
-          const newValue = prompt("edit tugas");
-          if(newValue  !== Null && newValue.trim() !== "") {
-            spanText.textContent = newValue;
+          const newValue = prompt("Edit pesan anda:", spanText.textContent);
+          if (newValue !== null && newValue.trim() !== "") {
+            spanText.textContent = newValue.trim();
           }
         });
 
-        li.appendChild(btnEdit);
-
         const btnDelete = document.createElement("button");
         btnDelete.textContent = "Delete";
-        btnEdit.style.backgroundColor = "pink";
-
+        btnDelete.className = "delete-btn";
         btnDelete.addEventListener("click", function () {
           list.removeChild(li);
+          if (list.children.length === 0) {
+            showEmptyState();
+          }
         });
 
-        li.appendChild(btnDelete);
+        actionDiv.appendChild(btnEdit);
+        actionDiv.appendChild(btnDelete);
+
+        li.appendChild(spanText);
+        li.appendChild(actionDiv);
+
         list.appendChild(li);
 
         input.value = "";
       } else {
-        alert("Tugas tidak boleh kosong!");
+        alert("Pesan tidak boleh kosong!");
       }
     });
+
+    function showEmptyState() {
+      const empty = document.createElement("li");
+      empty.className = "empty-state";
+      empty.textContent = "Add";
+      list.appendChild(empty);
+    };
   </script>
-</body>
+  </body>
 </html>

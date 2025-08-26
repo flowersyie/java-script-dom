@@ -1,97 +1,79 @@
  body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
-      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #6b91c9;
       padding: 20px;
     }
 
-    .todo-container {
+    .container {
       max-width: 500px;
-      margin: 40px auto;
-      background: white;
-      padding: 2rem;
+      margin: auto;
+      background-color: #4468e1;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     h1 {
       text-align: center;
-      color: #2c3e50;
-      margin-bottom: 1.5rem;
+      color: #333;
     }
 
-    .input-area {
+    .add-section {
       display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
-    .todo-input {
+    input[type="text"] {
       flex: 1;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 2px solid #ddd;
-      border-radius: 6px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
-    .add-btn {
-      padding: 0.75rem 1.2rem;
-      font-size: 1rem;
-      background-color: #3498db;
-      color: white;
+    button {
+      padding: 10px 15px;
       border: none;
-      border-radius: 6px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
     }
 
-    .add-btn:hover {
-      background-color: #2980b9;
+    #addBtn {
+      background-color: #28a745;
+      color: white;
     }
 
-    .todo-list {
-      list-style: none;
+    ul {
+      list-style-type: none;
       padding: 0;
     }
 
-    .todo-item {
-      background: #ecf0f1;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      margin-bottom: 0.75rem;
+    li {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background-color: #f8f9fa;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
     }
 
-    .todo-item span {
-      flex: 1;
-      color: #2c3e50;
-      font-weight: 500;
-    }
-
-    .action-btn {
-      margin-left: 8px;
-      padding: 6px 10px;
-      border: none;
-      border-radius: 4px;
-      color: white;
-      cursor: pointer;
-      font-size: 0.85rem;
+    .action-buttons button {
+      margin-left: 5px;
     }
 
     .edit-btn {
-      background-color: #f39c12;
-    }
-
-    .edit-btn:hover {
-      background-color: #d68910;
+      background-color: #ffc107;
+      color: #000;
     }
 
     .delete-btn {
-      background-color: #e74c3c;
+      background-color: #dc3545;
+      color: white;
     }
 
-    .delete-btn:hover {
-      background-color: #c0392b;
+    .empty-state {
+      text-align: center;
+      color: #777;
     }
